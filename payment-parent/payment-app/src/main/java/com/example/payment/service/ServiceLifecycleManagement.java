@@ -12,7 +12,7 @@ public class ServiceLifecycleManagement {
   @Getter private final Set<AutoCloseable> closeables;
 
   @Inject
-  public ServiceLifecycleManagement(Set<AutoCloseable> closeables) {
+  ServiceLifecycleManagement(Set<AutoCloseable> closeables) {
     this.closeables = closeables;
   }
 }

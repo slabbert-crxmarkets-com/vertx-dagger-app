@@ -7,6 +7,7 @@ import com.example.commons.future.FutureUtil;
 import com.example.commons.mesage.Consumer;
 import com.example.payment.ioc.DaggerProvider;
 import com.example.payment.ioc.Provider;
+import com.example.payment.service.TransactionService;
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Context;
 import io.vertx.core.Future;
@@ -56,6 +57,8 @@ public class WorkerVerticle extends AbstractVerticle {
             .postgresConfig(config.postgresConfig())
             .build();
     this.dagger.init();
+    TransactionService ts = this.dagger.transactionService();
+    ts.exec();
   }
 
   @Override

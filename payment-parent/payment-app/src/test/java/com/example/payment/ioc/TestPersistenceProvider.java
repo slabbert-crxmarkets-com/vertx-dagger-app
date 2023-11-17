@@ -6,6 +6,7 @@ import com.example.payment.repository.PaymentRepository;
 import com.example.payment.repository.RepositoryModule;
 import com.example.payment.service.PaymentService;
 import com.example.payment.service.ServiceModule;
+import com.example.payment.tranactionscope.TransactionScopeModule;
 import dagger.Component;
 import java.util.Set;
 import javax.inject.Singleton;
@@ -17,7 +18,8 @@ import org.jooq.DSLContext;
       ServiceModule.class,
       ConfigModule.class,
       RepositoryModule.class,
-      Provider.EagerModule.class
+      Provider.EagerModule.class,
+      TransactionScopeModule.class
     })
 public interface TestPersistenceProvider extends Provider {
 

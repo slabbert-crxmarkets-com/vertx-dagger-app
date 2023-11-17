@@ -5,6 +5,7 @@ import com.example.payment.repository.PaymentRepository;
 import com.example.payment.service.CreatePaymentHandler;
 import com.example.payment.service.PaymentService;
 import com.example.payment.service.ServiceModule;
+import com.example.payment.tranactionscope.TransactionScopeModule;
 import dagger.BindsInstance;
 import dagger.Component;
 import java.util.Set;
@@ -13,7 +14,8 @@ import javax.sql.DataSource;
 import org.jooq.DSLContext;
 
 @Singleton
-@Component(modules = {ServiceModule.class, Provider.EagerModule.class})
+@Component(
+    modules = {ServiceModule.class, Provider.EagerModule.class, TransactionScopeModule.class})
 public interface TestMockPersistenceProvider extends Provider {
 
   PaymentService paymentService();
